@@ -105,6 +105,25 @@ public class CheckStand {
     }
     public static void Owner(){
 
+        boolean cons = true;
+        while(cons){
+            ownerMenu();
+            int num = GoodsCenter.isToTime();//判断商品是否过期
+            if(num != 0){
+                System.out.println("上架商品中出现过期商品共"+
+                        num+ "件，请及时下架！\n");
+            }
+            System.out.println("请选择您的操作： ");
+            String op = reader.nextLine();
+            switch (op){
+                case "P"://商品上架
+                case "p":{
+                    GoodsCenter.printGoods();
+                    System.out.println("请输入上架商品信息：格式如下；" +
+                            "（不用）");
+                }
+            }
+        }
     }
     public static void Custumer(){
 
