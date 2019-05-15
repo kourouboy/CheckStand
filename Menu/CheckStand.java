@@ -100,9 +100,7 @@ public class CheckStand {
             }
         }
     }
-    class Goods{
 
-    }
     public static void Owner(){
 
         boolean cons = true;
@@ -120,14 +118,166 @@ public class CheckStand {
                 case "p":{
                     GoodsCenter.printGoods();
                     System.out.println("请输入上架商品信息：格式如下；" +
-                            "（不用）");
+                            "（不用填写上架日期）");
+                    System.out.println("1 橘子 5 100 2019-05-15 2019-05-25");
+                    Goods goods = readGoods();
+                    GoodCenter.addGood(goods);
+                    GoodCenter.printGoods();
+                    break;
+                }
+                case "D"://商品下架
+                case "d":{
+                    GoodsCenter.printGoods();
+
                 }
             }
         }
     }
     public static void Custumer(){
+        //顾客操作
 
     }
+
+    public static void ownerMenu(){
+        //店主菜单
+
+    }
+
+    public static void customerMenu(){
+        //顾客菜单
+    }
+    //商品信息类
+    static class Goods{
+
+        private int no ;//商品货号
+        private  String name ;//商品名称
+        private float price;//商品价格
+        private int num;//商品数量
+        private LocalDate toTime;//截至日期
+        private LocalDate proTime;//生产日期
+        private LocalDate upTime;//上架日期
+      //构造方法
+
+        public Goods(int no, String name, float price, int num, LocalDate toTime, LocalDate proTime, LocalDate upTime) {
+            this.no = no;
+            this.name = name;
+            this.price = price;
+            this.num = num;
+            this.toTime = toTime;
+            this.proTime = proTime;
+            this.upTime = upTime;
+        }
+
+        public Goods(int no,String name) {
+            this.no = no;
+            this.name = name;
+        }
+
+        public int getNo() {
+            return no;
+        }
+
+        public void setNo(int no) {
+            this.no = no;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public float getPrice() {
+            return price;
+        }
+
+        public void setPrice(float price) {
+            this.price = price;
+        }
+
+        public int getNum() {
+            return num;
+        }
+
+        public void setNum(int num) {
+            this.num = num;
+        }
+
+        public LocalDate getToTime() {
+            return toTime;
+        }
+
+        public void setToTime(LocalDate toTime) {
+            this.toTime = toTime;
+        }
+
+        public LocalDate getProTime() {
+            return proTime;
+        }
+
+        public void setProTime(LocalDate proTime) {
+            this.proTime = proTime;
+        }
+
+        public LocalDate getUpTime() {
+            return upTime;
+        }
+
+        public void setUpTime(LocalDate upTime) {
+            this.upTime = upTime;
+        }
+    }
+
+
+    //货架
+    class GoodsCenter{
+
+    }
+    //添加商品
+    public static void addGood(Goods goods){
+
+    }
+    //删除商品
+    public static void  deleteGood(Goods goods){
+
+    }
+    //修改商品信息
+    public static void modifyGood(Goods goods){
+
+    }
+    //商品是否已满
+    public static void isFull(){
+
+    }
+    //商品位是否全为空
+    public static boolean isEmply(){
+        return true;
+    }
+    //商品是否存在
+    public static boolean isExit(Goods goods){
+        return false;
+    }
+    //打印商品信息
+    public static void printGoods(){
+
+    }
+    //判断有几件商品到期了
+    public static int isToTime(){
+        int count = 0;
+        return count;
+    }
+    //返回商品
+    public static Goods getGood(int id){
+        return null;
+    }
+    //
+    public static int getMaxGoods(){
+        return getMaxGoods();
+    }
+
+
 
 }
 
