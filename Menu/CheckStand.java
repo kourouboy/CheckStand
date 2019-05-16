@@ -128,18 +128,41 @@ public class CheckStand {
                 case "D"://商品下架
                 case "d":{
                     GoodsCenter.printGoods();
-
+                    System.out.println("请输入下架商品编号及名称：格式如下：");
+                    System.out.println("1 苹果");
+                    Goods goods = readGoods();
+                    GoodsCenter.deleteGood(goods);
+                    GoodsCenter.printGoods();
+                    break;
+                }
+                case "Q"://退出店主操作
+                case "q":{
+                    cons = false;
+                    break;
+                }
+                default:{
+                    System.out.println("输入有误，请重新输入：");
+                    break;
                 }
             }
         }
     }
     public static void Custumer(){
         //顾客操作
+        System.out.println("**************************");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
 
     }
 
     public static void ownerMenu(){
         //店主菜单
+        System.out.println("***************************");
+        System.out.println("*****       店主      ******");
+        System.out.println("");
+        System.out.println("");
 
     }
 
@@ -232,49 +255,59 @@ public class CheckStand {
 
 
     //货架
-    class GoodsCenter{
+    static class GoodsCenter {
 
-    }
-    //添加商品
-    public static void addGood(Goods goods){
 
-    }
-    //删除商品
-    public static void  deleteGood(Goods goods){
+        //添加商品
+        public static void addGood(Goods goods) {
 
-    }
-    //修改商品信息
-    public static void modifyGood(Goods goods){
+        }
 
-    }
-    //商品是否已满
-    public static void isFull(){
+        //删除商品
+        public static void deleteGood(Goods goods) {
 
-    }
-    //商品位是否全为空
-    public static boolean isEmply(){
-        return true;
-    }
-    //商品是否存在
-    public static boolean isExit(Goods goods){
-        return false;
-    }
-    //打印商品信息
-    public static void printGoods(){
+        }
 
-    }
-    //判断有几件商品到期了
-    public static int isToTime(){
-        int count = 0;
-        return count;
-    }
-    //返回商品
-    public static Goods getGood(int id){
-        return null;
-    }
-    //
-    public static int getMaxGoods(){
-        return getMaxGoods();
+        //修改商品信息
+        public static void modifyGood(Goods goods) {
+
+        }
+
+        //商品是否已满
+        public static void isFull() {
+
+        }
+
+        //商品位是否全为空
+        public static boolean isEmply() {
+            return true;
+        }
+
+        //商品是否存在
+        public static boolean isExit(Goods goods) {
+            return false;
+        }
+
+        //打印商品信息
+        public static void printGoods() {
+
+        }
+
+        //判断有几件商品到期了
+        public static int isToTime() {
+            int count = 0;
+            return count;
+        }
+
+        //返回商品
+        public static Goods getGood(int id) {
+            return null;
+        }
+
+        //
+        public static int getMaxGoods() {
+            return getMaxGoods();
+        }
     }
 
 
