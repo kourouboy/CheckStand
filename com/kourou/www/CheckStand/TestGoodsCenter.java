@@ -26,36 +26,82 @@ class GoodsCenter{
 
     //添加商品
     public static void addGoods(Goods goods){
-
+        for (int i = 0; i <goodsArray.length ; i++) {
+            Goods temp = goodsArray[i];
+            if (temp.getId() == goods.getId()){
+                temp.setName(goods.getName());
+                temp.setPrice(goods.getPrice());
+                break;
+            }
+        }
     }
 
     //下架商品
     public static void OutGood(Goods goods){
-
+        for (int i = 0; i <goodsArray.length ; i++) {
+            Goods temp = goodsArray[i];
+            if (temp.getId() == goods.getId()){
+                temp.setName(placeHolder);
+                temp.setPrice(0.0D);
+                break;
+            }
+        }
     }
 
     //修改商品
-    public static void modifyGoods(Goods goods){
-
+    public static boolean modifyGoods(Goods goods){
+        for (int i = 0; i <goodsArray.length ; i++) {
+            Goods temp = goodsArray[i];
+            if (temp.getId() == goods.getId()){
+                temp.setName(goods.getName());
+                temp.setPrice(goods.getPrice());
+                break;
+            }
+        }
+        return false;
     }
 
     //判断商品是否存在
     public static boolean isExist(Goods goods){
+        for (int i = 0; i <goodsArray.length ; i++) {
+            Goods temp = goodsArray[i];
+            if (temp.getId() == goods.getId() && temp.getName().equals(goods.getName())){
+                return true;
+            }
+        }
         return false;
     }
 
     //判断商品位是否存在
     public static boolean isPutaway(Goods goods){
+        for (int i = 0; i <goodsArray.length ; i++) {
+            Goods temp = goodsArray[i];
+            if (temp.getId() == goods.getId() && !temp.getName().equals(placeHolder)){
+                return true;
+            }
+        }
         return false;
     }
 
     //商品是否已满
     public static boolean isFull(){
+        for (int i = 0; i <goodsArray.length ; i++) {
+            Goods temp = goodsArray[i];
+            if (goodsArray[i].getName().equals(placeHolder)){
+                return false;
+            }
+        }
         return true;
     }
 
     //商品未满则打印其信息
     public static Goods getGoods(int id){
+        for (int i = 0; i <goodsArray.length ; i++) {
+            Goods temp = goodsArray[i];
+            if (temp.getId() == id && !temp.getName().equals(placeHolder)){
+                return goodsArray[i];
+            }
+        }
         return null;
     }
 

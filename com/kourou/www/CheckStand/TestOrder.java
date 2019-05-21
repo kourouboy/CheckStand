@@ -4,7 +4,7 @@ class Order{
     private int id;
     private Goods[] items;
     private int[] itemsNumber;
-    private int currentIndex;
+    private int currentIndex;  //当前商品数量
 
     public Order() {
         this.id = ++orderId;
@@ -15,6 +15,8 @@ class Order{
 
     //添加订单
     public void add(Goods goods,int count){
+
+        int indeex ;
 
     }
 
